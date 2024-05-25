@@ -16,8 +16,6 @@ const CreateCourse = () => {
   return <>
     <input type="text" placeholder="Enter Course Name" onChange={captureCourseName}/>
     <input type="text" placeholder="Enter Course Desc" onChange={captureCourseDescription}/>
-    <p>{courseName}</p>
-    <p>{courseDescription}</p>
   </>
 }
 
