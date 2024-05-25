@@ -6,8 +6,21 @@ const coursesContext = createContext({
 
 const CoursesContextProvider = ({children}) => {
 
-  const createCourse = () => {
+  const createCourse = async (courseName, courseDescription) => {
+    const response = await fetch('http://localhost:8000/courses', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify({
+        courseName: courseName,
+        courseDescription: courseDescription
+      })
+    })
 
+    const data = await response.json()
+
+    console.log(data.message)
   }
 
 
